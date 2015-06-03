@@ -102,6 +102,7 @@ $('a[href*=#]:not([href=#])').click(function() {
 		sEvent.preventDefault();
 		$.ajax({
 			method: 'POST',
+			url: 'http://samilin.fvds.ru/catch.php',
 			data: $(this).serializeArray(),
 			success: function(response) {
 				console.log(response);
