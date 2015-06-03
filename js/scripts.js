@@ -55,12 +55,16 @@ $(document).ready(function() {
 	});
 	$("#subscription").on('submit', function(sEvent) {
 		sEvent.preventDefault();
+		var data = $(this).serializeArray();
+		data.source = 'VACATIONIZATOR';
+		var form = $(this);
 		$.ajax({
 			method: 'POST',
 			url: 'http://samilin.fvds.ru/catch.php',
-			data: $(this).serializeArray(),
+			data: data,
 			success: function(response) {
-				console.log(response);
+				form.find('input[type="submit"]').text('Готово!');
+				form.find('input[type="email"]').attr('disabled', 'disabled');
 			}
 		});
 	});
