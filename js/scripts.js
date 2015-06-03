@@ -53,7 +53,7 @@ $(document).ready(function() {
 		});
 		return false;
 	});
-	$("#subscription").submit(function(sEvent) {
+	$("#subscription").on('submit', function(sEvent) {
 		sEvent.preventDefault();
 		$.ajax({
 			method: 'POST',
