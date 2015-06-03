@@ -66,7 +66,7 @@ $(document).ready(function() {
 			url: 'http://samilin.fvds.ru/catch.php',
 			data: data,
 			success: function(response) {
-				form.find('input[type="submit"]').text('Готово!');
+				form.find('input[type="submit"]').attr('value', 'Готово!');
 				form.find('input[type="email"]').attr('disabled', 'disabled');
 			}
 		});
