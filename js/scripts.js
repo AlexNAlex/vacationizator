@@ -53,6 +53,16 @@ $(document).ready(function() {
 		});
 		return false;
 	});
+	$("#subscription").submit(function(sEvent) {
+		sEvent.preventDefault();
+		$.ajax({
+			method: 'POST',
+			data: $(this).serializeArray(),
+			success: function(response) {
+				console.log(response);
+			}
+		});
+	});
 
 });
 
