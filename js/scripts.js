@@ -66,10 +66,22 @@ $(document).ready(function() {
 			url: 'http://samilin.fvds.ru/catch.php',
 			data: data,
 			success: function(response) {
+				ga('send', {
+				  'hitType': 'event',          // Required.
+				  'eventCategory': 'aim',   // Required.
+				  'eventAction': 'subscribe'      // Required.
+				});
 				form.find('input[type="submit"]').attr('value', 'Готово!');
 				form.find('input[type="email"]').attr('disabled', 'disabled');
 			}
 		});
+	});
+	$("a.play").on('click', function(clickEvent) {
+		ga('send', {
+		  'hitType': 'event',          // Required.
+		  'eventCategory': 'aim',   // Required.
+		  'eventAction': 'install'
+		});	
 	});
 
 });
