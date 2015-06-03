@@ -65,6 +65,9 @@ $(document).ready(function() {
 			success: function(response) {
 				form.find('input[type="submit"]').text('Готово!');
 				form.find('input[type="email"]').attr('disabled', 'disabled');
+			},
+			error: function(xhr, status, error) {
+				console.log(status, error);
 			}
 		});
 	});
