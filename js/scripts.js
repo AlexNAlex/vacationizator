@@ -56,9 +56,11 @@ $(document).ready(function() {
 	$("#subscription").on('submit', function(sEvent) {
 		sEvent.preventDefault();
 		var data = $(this).serializeArray();
-		data.source = 'VACATIONIZATOR';
+		data.push({
+			name: 'source',
+			value: 'VACATIONIZATOR'
+		});
 		var form = $(this);
-		console.log(data);
 		$.ajax({
 			method: 'POST',
 			url: 'http://samilin.fvds.ru/catch.php',
@@ -66,9 +68,6 @@ $(document).ready(function() {
 			success: function(response) {
 				form.find('input[type="submit"]').text('Готово!');
 				form.find('input[type="email"]').attr('disabled', 'disabled');
-			},
-			error: function(xhr, status, error) {
-				console.log(status, error);
 			}
 		});
 	});
