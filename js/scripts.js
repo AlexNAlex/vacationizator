@@ -53,16 +53,6 @@ $(document).ready(function() {
 		});
 		return false;
 	});
-	$("#subscription").on('submit', function(sEvent) {
-		sEvent.preventDefault();
-		$.ajax({
-			method: 'POST',
-			data: $(this).serializeArray(),
-			success: function(response) {
-				console.log(response);
-			}
-		});
-	});
 
 });
 
@@ -107,3 +97,14 @@ $('a[href*=#]:not([href=#])').click(function() {
 		}
 	}
 });
+
+	$("#subscription").on('submit', function(sEvent) {
+		sEvent.preventDefault();
+		$.ajax({
+			method: 'POST',
+			data: $(this).serializeArray(),
+			success: function(response) {
+				console.log(response);
+			}
+		});
+	});
